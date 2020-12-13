@@ -1,0 +1,21 @@
+<p>student-view works!</p>
+<div *ngIf="schoolClass !== null">
+<h1>Student View</h1>
+<h3>{{schoolClass.name}}</h3>
+
+<div>
+    <h2>Message:</h2>
+    <label>Input: <input #message> </label>
+    <button (click)="encrypt(message.value)">Encrypt!</button>
+</div>
+
+<div>
+    <h4>Encrypted Message</h4>
+    <p>{{encryptedMessage}}</p>
+    <h4>Hash</h4>
+    <p>{{hash}}</p>
+</div>
+
+<div><button (click)="sendMessage()">Send!</button></div>
+</div>
+<div *ngIf="schoolClass ===null"><p>Class does not exist</p></div>

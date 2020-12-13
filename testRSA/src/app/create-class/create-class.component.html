@@ -1,0 +1,17 @@
+<p>create-class works!</p>
+
+
+<div>
+    <label>Classname: <input #newClassName> </label>
+
+    <button (click)='createClass(newClassName.value)'>Make Class</button>
+
+    <H3>The passord is: </H3>
+    <p>{{password}}</p>
+
+    <H3>The Key is:</H3>
+    <p>{{publicKey}}</p>
+
+    <H2> Class Link is:</H2>
+   <p> <a href= "student/{{class_link}}">{{class_link}}</a></p>
+</div>

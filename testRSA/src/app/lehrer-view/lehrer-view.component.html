@@ -1,0 +1,25 @@
+<p>lehrer-view works!</p>
+
+<div *ngIf="schoolClass !== null">
+
+    <!-- <label>Class Password:<input #password></label>
+    <button (click)='signIn(password.value)'>login</button>
+
+
+    <div><p></p></div> -->
+
+    <div>
+        <p>Classname: {{schoolClass.name}}</p>
+        <p>Id: {{schoolClass.id}}</p>
+    </div>
+
+    <app-teacher-auth [schoolClass]="schoolClass" (signedInTeacher)="signedIn($event)"></app-teacher-auth>
+
+    <div *ngIf="teacher !== null">
+        <div *ngFor="let msg of messanges">
+            <p>Message: {{msg.decrypted}}</p>
+            <p>Hash: {{msg.hash}}</p>
+        </div>
+    </div>
+</div>
+<div *ngIf="schoolClass === null"><p>Class does not exist</p></div>

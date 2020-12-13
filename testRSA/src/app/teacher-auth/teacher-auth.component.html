@@ -1,0 +1,9 @@
+<p>teacher-auth works!</p>
+
+<div>
+    <div *ngIf="teacher !== null" >Authenticated: {{teacher?.teacherSecret}} </div>
+    <!--  -->
+    <div *ngIf="teacher === null">
+        <label>Klassencode: <input #loginPassword> </label><button (click)="login(loginPassword.value)">send</button>
+    </div>
+</div>
