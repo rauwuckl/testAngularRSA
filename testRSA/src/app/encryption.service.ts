@@ -275,4 +275,9 @@ export class EncryptionService {
     }))
     return req
   }
+
+  postMessageTest(msg: EncMessage){
+    let req = this.http.post('http://localhost:5000/test', msg)
+    return req
+  }
 }

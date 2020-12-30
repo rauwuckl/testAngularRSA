@@ -1,0 +1,28 @@
+<li class="list-group-item"
+ [class.list-group-item-warning]="studentEntity.changed"
+ [class.list-group-item-danger]="studentEntity.deleted"
+ [class.list-group-item-info]="studentEntity.teacherAdded"
+ >
+    <div class='row'>
+         <div class='col-sm'>
+             <span *ngIf="!editMode">
+                 <span *ngIf="studentEntity.changed || studentEntity.deleted">
+                     <s>{{studentEntity.origName}}</s>
+                </span>
+                 <span *ngIf="!studentEntity.deleted">
+                     {{ studentEntity.name }}
+                </span>
+            </span>
+             <span *ngIf="editMode">
+                 <input [formControl]="formControl" 
+                 placeholder="{{studentEntity.name}}" 
+                 (blur)="save()" (keyup.enter)="save()">
+             </span>
+         </div>
+         <div class='col-sm'>
+             <button *ngIf="!editMode" (click)="edit()"> edit</button>
+             <button *ngIf="editMode"  (click)="save()"> save</button>
+             <button (click)="delete()"> delete</button>
+         </div>
+     </div>   
+ </li>
